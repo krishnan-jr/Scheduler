@@ -108,7 +108,7 @@ entity Jobs {
         employmentEndDate   : DateTime;
         firstName           : String(128);
         lastName            : String(128);
-        photo               : LargeBinary;
+        photo               : LargeString;
         mimeType            : String(32);
 }
 

@@ -204,7 +204,13 @@ module.exports = function () {
                             mimeType
                         }
                     });
-                    await UPSERT.into("Jobs").entries(mappedJobs);
+                    try {
+                        await UPSERT.into("Jobs").entries(mappedJobs);
+                    } catch (error) {
+                        console.log("top", top, "skip", skip);
+                        console.log(error);
+                    }
+
                     skip = skip + top;
                 }
             } while (JobsData.length != 0);
