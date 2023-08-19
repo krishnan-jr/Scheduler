@@ -1,4 +1,3 @@
 service SyncService @(path: '/sync') {
-    function getShifts() returns String;
-    
+    function syncShifts() returns String;
 }

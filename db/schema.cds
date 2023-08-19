@@ -63,7 +63,7 @@ entity Shifts {
     key externalCode              : String(128);
         externalName_defaultValue : String(255) default '';
         crossMidnightAllowed      : Boolean default false;
-        workingHours              : String(5) default '';
+        workingHours              : Decimal default 0;
         timeRecordingVariant      : String(255) default '';
         shiftClassification       : String(128) default '';
         Segments                  : Association to many Segments
