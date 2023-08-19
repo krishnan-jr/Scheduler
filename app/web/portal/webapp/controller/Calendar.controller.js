@@ -27,23 +27,21 @@ sap.ui.define([
                     monthName = newStartDate.toLocaleString('default', { month: 'long' });
                 this.byId("PC1")._oTodayButton.setText(monthName + ' ' + year);
             },
-            onInit: async function() { // create model
+            onInit: function() {
                 this.shiftModel = new JSONModel();
-                await this.shiftModel.loadData("../model/shifts.json");
-                this.shiftModel.setData(this.shiftModel.getData().d.results);
                 this.getView().setModel(this.shiftModel, "shiftModel");
 
                 this.employeeModel = new JSONModel();
-                await this.employeeModel.loadData("../model/employee.json");
-                this.employeeModel.setData(this.employeeModel.getData().d.results);
+                // await this.employeeModel.loadData("../model/employee.json");
+                // this.employeeModel.setData(this.employeeModel.getData().d.results);
                 this.getView().setModel(this.employeeModel, "employeeModel");
 
                 this.employeeLeaveModel = new JSONModel();
-                await this.employeeLeaveModel.loadData("../model/employeeLeave.json");
-                this.employeeLeaveModel.setData(this.employeeLeaveModel.getData().d.results);
+                // await this.employeeLeaveModel.loadData("../model/employeeLeave.json");
+                // this.employeeLeaveModel.setData(this.employeeLeaveModel.getData().d.results);
                 this.getView().setModel(this.employeeLeaveModel, "employeeLeaveModel");
 
-                this._convertEmpDataToNewFormat(this.employeeModel.getData(), this.employeeLeaveModel.getData());
+                // this._convertEmpDataToNewFormat(this.employeeModel.getData(), this.employeeLeaveModel.getData());
 
                 this.apptDetailModel = new JSONModel();
                 this.getView().setModel(this.apptDetailModel, "apptDetailModel");
@@ -51,58 +49,58 @@ sap.ui.define([
                 this.empDetailModel = new JSONModel();
                 this.getView().setModel(this.empDetailModel, "empDetailModel");
 
-                const convertedShiftData = this._convertDataToNewFormat(this.shiftModel.getData());
-                this.shiftModel.setData(convertedShiftData);
+                this._getShiftData();
+                this._getEmployeeData();
             },
             /**Add special Dates to existing array*/
-            _convertEmpDataToNewFormat: function(empDate, empLeaveData) {
-                const extractedData = empLeaveData.map(result => {
-                    const startDate = new Date(parseInt(result.startDate.slice(6, -2))),
-                        endDate = new Date(parseInt(result.endDate.slice(6, -2)));
-                    return {
-                        externalName: result.timeTypeNav.externalName_localized,
-                        approvalStatus: result.approvalStatus,
-                        startDate: new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()),
-                        endDate: new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()),
-                        type: "Type07",
-                        leave: true,
-                        title: "Leave"
-                    };
-                });
-                empDate.forEach(obj => {
-                    if (obj.userId === "802982") {
-                        obj["appointments"] = extractedData;
-                    }
-                });
-                this.employeeModel.setData(empDate);
-            },
+            // _convertEmpDataToNewFormat: function (empDate, empLeaveData) {
+            //     const extractedData = empLeaveData.map(result => {
+            //         const startDate = new Date(parseInt(result.startDate.slice(6, -2))),
+            //             endDate = new Date(parseInt(result.endDate.slice(6, -2)));
+            //         return {
+            //             externalName: result.timeTypeNav.externalName_localized,
+            //             approvalStatus: result.approvalStatus,
+            //             startDate: new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()),
+            //             endDate: new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()),
+            //             type: "Type07",
+            //             leave: true,
+            //             title: "Leave"
+            //         };
+            //     });
+            //     empDate.forEach(obj => {
+            //         if (obj.userId === "802982") {
+            //             obj["appointments"] = extractedData;
+            //         }
+            //     });
+            //     this.employeeModel.setData(empDate);
+            // },
             /** Data formulation for shift */
-            _convertDataToNewFormat: function(shiftData) {
-                const convertedData = shiftData.map(item => {
-                    var status = "",
-                        color, type;
-                    if (item.externalCode === "CLT_0800-1700") {
-                        status = "Warning";
-                        color = "#ffef9f";
-                        type = "Type01";
-                    } else {
-                        status = "Success";
-                        color = "#d1efff";
-                        type = "Type06";
+            _getShiftData: function() {
+                var _self = this;
+                jQuery.ajax({
+                    url: "/srv/schedule/Shift",
+                    type: "GET",
+                    success: function(data, status, xhr) {
+                        _self.shiftModel.setData(data.value);
+                    },
+                    error: function(response) {
+                        debugger;
                     }
-                    return {
-                        "externalCode": item.externalCode,
-                        "crossMidnightAllowed": item.crossMidnightAllowed,
-                        "externalName_defaultValue": item.externalName_defaultValue,
-                        "workingHours": item.workingHours,
-                        "shiftClassification": item.shiftClassification,
-                        "status": status,
-                        "color": color,
-                        "type": type
-                    };
                 });
-
-                return convertedData;
+            },
+            _getEmployeeData: function() {
+                var _self = this;
+                jQuery.ajax({
+                    url: "/srv/schedule/Shift",
+                    type: "GET",
+                    success: function(data, status, xhr) {
+                        debugger;
+                        _self.shiftModel.setData(data.value);
+                    },
+                    error: function(response) {
+                        debugger;
+                    }
+                });
             },
             /** Appointment Delails PopOver*/
             handleAppointmentSelect: function(oEvent) {
@@ -177,7 +175,7 @@ sap.ui.define([
                     oModel = this.getView().getModel("employeeModel"),
                     oData = oModel.getData(),
                     oSelectedNode = oSelectedItem.getBindingContext("shiftModel").getObject(),
-                    type = oSelectedNode.type,
+                    type = oSelectedNode.colorType,
                     startDate = new Date(new Date(oStartDate).setHours(0, 0, 0, 0)),
                     endDate = new Date(new Date(oStartDate).setHours(23, 59, 59, 999)),
                     oAppointment = {
@@ -370,8 +368,8 @@ sap.ui.define([
                 oModel.setProperty(sTempPath, aPersonAppointments);
             },
             /**Clear Shift Selection  */
-            // onClearSelection: function() {
-            //     this.byId("Tree").removeSelections();
-            // }
+            onClearSelection: function() {
+                this.byId("Tree").removeSelections();
+            }
         });
     });
