@@ -23,17 +23,17 @@
       "source": "^/portal/model/(.*)$",
       "target": "/portal/webapp/model/$1",
       "localDir": "web",
-      "authenticationType": "none"
+      "authenticationType": "xsuaa"
     },
     {
       "source": "^/portal/webapp/view/fragments/(.*)$",
       "target": "/portal/webapp/view/fragments/$1",
       "localDir": "web",
-      "authenticationType": "none"
+      "authenticationType": "xsuaa"
     },
     {
       "source": "^/portal/(.*)",
-      "authenticationType": "none",
+      "authenticationType": "xsuaa",
       "localDir": "web"
     }
   ]
