@@ -165,7 +165,7 @@ module.exports = function () {
                                         }
                                     }
                                 })[0];
-                                photo = sorted.photo;
+                                photo = sorted.photo.replace(/\r\n/g, "");
                                 mimeType = sorted.mimeType;
                             }
                         }
