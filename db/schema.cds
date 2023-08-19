@@ -61,11 +61,11 @@ entity DraftItems {
 
 entity Shifts {
     key externalCode              : String(128);
-        externalName_defaultValue : String(255);
-        crossMidnightAllowed      : Boolean;
-        workingHours              : String(5);
-        timeRecordingVariant      : String(255);
-        shiftClassification       : String(128);
+        externalName_defaultValue : String(255) default '';
+        crossMidnightAllowed      : Boolean default false;
+        workingHours              : String(5) default '';
+        timeRecordingVariant      : String(255) default '';
+        shiftClassification       : String(128) default '';
         Segments                  : Association to many Segments
                                         on Segments.WorkScheduleDayModel = $self;
         colorType                 : type of ColorCode : colorType;
@@ -75,8 +75,8 @@ entity Shifts {
 entity Segments {
     key WorkScheduleDayModel : Association to Shifts;
     key externalCode         : String(128);
-        startTime            : Time;
-        endTime              : Time;
-        duration             : Integer;
-        category             : String(255);
+        startTime            : String(13) default '';
+        endTime              : String(13) default '';
+        duration             : Integer default 0;
+        category             : String(255) default '';
 }

@@ -1,4 +1,4 @@
-service CustomService @(path: '/custom') {
+service SyncService @(path: '/sync') {
     function getShifts() returns String;
     
 }
