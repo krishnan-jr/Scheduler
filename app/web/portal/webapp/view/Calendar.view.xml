@@ -3,6 +3,7 @@
     xmlns:unified="sap.ui.unified"
     xmlns:l="sap.ui.layout"
     xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
     xmlns:core="sap.ui.core">
     <Page showHeader="false">
         <l:BlockLayout id="BlockLayout" background="Dashboard" keepFontSize="true">
@@ -33,20 +34,38 @@
                     <OverflowToolbar>
                         <Title text="Shifts" titleStyle="H4"/>
                         <ToolbarSpacer />
-                        <!-- <Button icon="sap-icon://clear-filter" press="onClearSelection" tooltip="Clear Selection"/> -->
+                        <Button icon="sap-icon://clear-filter" press="onClearSelection" tooltip="Clear Selection"/>
                     </OverflowToolbar>
                     <List id="Tree" mode="SingleSelectMaster" items="{path: 'shiftModel>/'}">
                         <CustomListItem>
-                            <HBox >
-                                <VBox class="sapUiTinyMargin" backgroundDesign="Solid" justifyContent="Center">
-                                    <Text text="{shiftModel>externalName_defaultValue}"/>
+                            <HBox alignItems="Center">
+                                <VBox class="sapUiTinyMarginEnd " backgroundDesign="Solid" justifyContent="Center">
+                                    <core:Icon color="{shiftModel>colorCode}" size="30px" src="sap-icon://color-fill"/>
                                 </VBox>
-                                <VBox class="sapUiTinyMargin" justifyContent="Center">
-                                    <core:Icon color="{shiftModel>color}" size="30px" src="sap-icon://color-fill"/>
+                                <VBox justifyContent="Center">
+                                    <Text text="{shiftModel>externalName_defaultValue}" renderWhitespace="true" class="sapUiTinyMarginBegin">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                        </layoutData>
+                                    </Text>
                                 </VBox>
                             </HBox>
                         </CustomListItem>
                     </List>
+                    <!-- <Tree id="Tree" items="{path: 'shiftModel>/'}">
+                        <CustomTreeItem>
+                            <FlexBox alignItems="Start" width="100%">
+                                <items>
+                                    <core:Icon color="{shiftModel>color}" size="30px" src="sap-icon://color-fill"/>
+                                    <Text text="{shiftModel>externalName_defaultValue}" class="sapUiTinyMarginBegin">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                        </layoutData>
+                                    </Text>
+                                </items>
+                            </FlexBox>
+                        </CustomTreeItem>
+                    </Tree> -->
                 </l:BlockLayoutCell>
             </l:BlockLayoutRow>
         </l:BlockLayout>
