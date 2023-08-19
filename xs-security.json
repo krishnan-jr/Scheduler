@@ -1,0 +1,56 @@
+{
+    "xsappname": "scheduler-dev",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.SchedulerAdmin",
+            "description": "Scheduler Admin"
+        },
+        {
+            "name": "$XSAPPNAME.SchedulerUser",
+            "description": "Scheduler User"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "SchedulerAdmin",
+            "description": "Admin role for Scheduler",
+            "scope-references": [
+                "$XSAPPNAME.SchedulerAdmin"
+            ]
+        },
+        {
+            "name": "SchedulerUser",
+            "description": "User role for Scheduler",
+            "scope-references": [
+                "$XSAPPNAME.SchedulerUser"
+            ]
+        }
+    ],
+    "role-collections": [
+        {
+            "name": "Scheduler_Admin",
+            "description": "Admin access for Scheduler",
+            "role-template-references": [
+                "$XSAPPNAME.SchedulerAdmin"
+            ]
+        },
+        {
+            "name": "Scheduler_User",
+            "description": "User access for Scheduler",
+            "role-template-references": [
+                "$XSAPPNAME.SchedulerUser"
+            ]
+        }
+    ],
+    "authorities": [
+        "$ACCEPT_GRANTED_AUTHORITIES"
+    ],
+    "oauth2-configuration": {
+        "redirect-uris": [
+            "https://*.cfapps.us10-001.hana.ondemand.com/**",
+            "http://localhost:5000/**",
+            "https://*.*.trial.applicationstudio.cloud.sap/**"
+        ]
+    }
+}

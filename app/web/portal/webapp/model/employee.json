@@ -1,0 +1,1215 @@
+{
+    "d": {
+        "results": [{
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2020-06-22T00:00:00',userId='802985')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "802985",
+                "employeeClass": "4662",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "US10_RDGEN",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "1710",
+                "location": "1710-2003",
+                "position": "50014351",
+                "department": "50150014",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2003',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "San Francisco"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='802985',userId='802985')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1270944000000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('802985')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='802985',startDate=datetime'2010-04-11T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Stephanie",
+                                "lastName": "Thorn"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-06-22T00:00:00',userId='802985')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "UB",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='UB',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Bi-weekly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='50014351',effectiveStartDate=datetime'1990-01-01T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Production Planning Manager"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_RDGEN',startDate=datetime'2014-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "USA Production"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(4662L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50150014',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Planning & Scheduling US"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='1710',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun USA"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=2L,startDate=datetime'2017-01-01T00:00:00',userId='108799')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "108799",
+                "employeeClass": "30087",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "2800-4200",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "2800",
+                "location": "2800-SZ01",
+                "position": "500300207",
+                "department": "50100011",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='2800-SZ01',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "Shenzhen"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='108799',userId='108799')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1430438400000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('108799')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='108799',startDate=datetime'2017-04-13T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Ray",
+                                "lastName": "Akoshile"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-01-01T00:00:00',userId='108799')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "US",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='US',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Semi-Monthly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='500300207',effectiveStartDate=datetime'2017-03-09T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Capacity Planning Manager"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='2800-4200',startDate=datetime'2013-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "China Production"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(30087L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=30087L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Consultant"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=30087L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Consultant"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50100011',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Production CN"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='2800',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun China"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2021-01-01T00:00:00',userId='802984')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "802984",
+                "employeeClass": "4662",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "US10_PROD",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "1710",
+                "location": "1710-2003",
+                "position": "50000203",
+                "department": "50150011",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2003',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "San Francisco"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='802984',userId='802984')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1269561600000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('802984')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='802984',startDate=datetime'2010-03-26T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "James",
+                                "lastName": "Klein"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-01-01T00:00:00',userId='802984')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "UB",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='UB',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Bi-weekly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='50000203',effectiveStartDate=datetime'2021-01-01T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Assembly Manager"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_PROD',startDate=datetime'2020-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "Product Management"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(4662L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50150011',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Production US"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='1710',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun USA"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2021-01-01T00:00:00',userId='103106')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "103106",
+                "employeeClass": "4662",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "US10_PROD",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "1710",
+                "location": "1710-2009",
+                "position": "3000330",
+                "department": "50150011",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2009',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "New Brunswick"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='107029',userId='103106')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1520985600000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('107029')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='107029',startDate=datetime'2011-12-18T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Anson",
+                                "lastName": "Gao"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-01-01T00:00:00',userId='103106')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "UM",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='UM',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Monthly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='3000330',effectiveStartDate=datetime'2021-01-01T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Production Planning Engineer"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_PROD',startDate=datetime'2020-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "Product Management"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(4662L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50150011',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Production US"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='1710',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun USA"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2021-01-01T00:00:00',userId='802982')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "802982",
+                "employeeClass": "4662",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "US10_PROD",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "1710",
+                "location": "1710-2007",
+                "position": "50000204",
+                "department": "50150011",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2007',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "New York"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='802982',userId='802982')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1262304000000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('802982')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='802982',startDate=datetime'2016-01-11T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Jada",
+                                "lastName": "Baker"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-01-01T00:00:00',userId='802982')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "US",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='US',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Semi-Monthly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='50000204',effectiveStartDate=datetime'2021-01-01T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Program Management Office"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_PROD',startDate=datetime'2020-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "Product Management"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(4662L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50150011',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Production US"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='1710',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun USA"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2021-01-01T00:00:00',userId='jandrina')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "jandrina",
+                "employeeClass": "30094",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "US10_PROD",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "1710",
+                "location": "1710-2009",
+                "position": "3000967",
+                "department": "50150011",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2009',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "New Brunswick"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='jandrina',userId='jandrina')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1591574400000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('jandrina')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='jandrina',startDate=datetime'2020-06-08T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Jakki",
+                                "lastName": "Andrina"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-06-08T00:00:00',userId='jandrina')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "UM",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='UM',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Monthly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='3000967',effectiveStartDate=datetime'2021-01-01T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Digital Expert"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_PROD',startDate=datetime'2020-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "Product Management"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(30094L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=30094L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Employee"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=30094L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Employee"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50150011',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Production US"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='1710',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun USA"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2021-02-01T00:00:00',userId='802986')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "802986",
+                "employeeClass": "4662",
+                "businessUnit": "PRODS",
+                "employmentType": "3629",
+                "costCenter": "US10_PROD",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "1710",
+                "location": "1710-2009",
+                "position": "50014353",
+                "department": "50150011",
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3629L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3629L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Hourly rate/staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3629L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Hourly rate/staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2009',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "New Brunswick"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='802986',userId='802986')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1326672000000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('802986')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='802986',startDate=datetime'2012-01-16T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Faith",
+                                "lastName": "Marshall"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-01-01T00:00:00',userId='802986')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "UB",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='UB',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Bi-weekly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='50014353',effectiveStartDate=datetime'2021-01-01T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Administrator"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_PROD',startDate=datetime'2020-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "Product Management"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(4662L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODepartment(externalCode='50150011',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODepartment"
+                    },
+                    "name_defaultValue": "Production US"
+                },
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='1710',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "BestRun USA"
+                }
+            },
+            {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpJob(seqNumber=1L,startDate=datetime'2023-07-19T00:00:00',userId='802983')",
+                    "type": "SFOData.EmpJob"
+                },
+                "userId": "802983",
+                "employeeClass": "4662",
+                "businessUnit": "PRODS",
+                "employmentType": "3631",
+                "costCenter": "US10_RDGEN",
+                "managerId": "802981",
+                "division": "MANU",
+                "company": "100000",
+                "location": "1710-2018",
+                "position": "50014349",
+                "department": null,
+                "employmentTypeNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(3631L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=3631L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Salaried staff"
+                            }
+                        ]
+                    }
+                },
+                "businessUnitNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOBusinessUnit(externalCode='PRODS',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FOBusinessUnit"
+                    },
+                    "name_defaultValue": "Products"
+                },
+                "locationNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOLocation(externalCode='1710-2018',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOLocation"
+                    },
+                    "name": "Philadelphia"
+                },
+                "employmentNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpEmployment(personIdExternal='802983',userId='802983')",
+                        "type": "SFOData.EmpEmployment"
+                    },
+                    "endDate": null,
+                    "startDate": "/Date(1324166400000)/",
+                    "personNav": {
+                        "__metadata": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPerson('802983')",
+                            "type": "SFOData.PerPerson"
+                        },
+                        "personalInfoNav": {
+                            "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PerPersonal(personIdExternal='802983',startDate=datetime'2011-12-18T00:00:00')",
+                                    "type": "SFOData.PerPersonal"
+                                },
+                                "firstName": "Ben",
+                                "lastName": "Shervin"
+                            }]
+                        }
+                    },
+                    "compInfoNav": {
+                        "results": [{
+                            "__metadata": {
+                                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmpCompensation(startDate=datetime'2020-01-01T00:00:00',userId='802983')",
+                                "type": "SFOData.EmpCompensation"
+                            },
+                            "payGroup": "US",
+                            "payGroupNav": {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOPayGroup(externalCode='US',startDate=datetime'1900-01-01T00:00:00')",
+                                    "type": "SFOData.FOPayGroup"
+                                },
+                                "name_defaultValue": "USA Semi-Monthly"
+                            }
+                        }]
+                    }
+                },
+                "divisionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FODivision(externalCode='MANU',startDate=datetime'2016-01-01T00:00:00')",
+                        "type": "SFOData.FODivision"
+                    },
+                    "name_defaultValue": "Manufacturing"
+                },
+                "positionNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/Position(code='50014349',effectiveStartDate=datetime'2023-06-13T00:00:00')",
+                        "type": "SFOData.Position"
+                    },
+                    "externalName_defaultValue": "Engineering Manager"
+                },
+                "costCenterNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCostCenter(externalCode='US10_RDGEN',startDate=datetime'2014-01-01T00:00:00')",
+                        "type": "SFOData.FOCostCenter"
+                    },
+                    "name_defaultValue": "USA Production"
+                },
+                "employeeClassNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistOption(4662L)",
+                        "type": "SFOData.PicklistOption"
+                    },
+                    "picklistLabels": {
+                        "results": [{
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_US',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            },
+                            {
+                                "__metadata": {
+                                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/PicklistLabel(locale='en_GB',optionId=4662L)",
+                                    "type": "SFOData.PicklistLabel"
+                                },
+                                "label": "Active"
+                            }
+                        ]
+                    }
+                },
+                "departmentNav": null,
+                "companyNav": {
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/FOCompany(externalCode='100000',startDate=datetime'1900-01-01T00:00:00')",
+                        "type": "SFOData.FOCompany"
+                    },
+                    "name_defaultValue": "AnyBiz"
+                }
+            }
+        ]
+    }
+}

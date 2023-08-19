@@ -1,0 +1,40 @@
+{
+  "welcomeFile": "./portal/webapp/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/app/(.*)$",
+      "target": "$1",
+      "localDir": ".",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/appconfig/",
+      "localDir": ".",
+      "cacheControl": "no-cache, no-store, must-revalidate"
+    },
+    {
+      "source": "^/srv/(.*)$",
+      "target": "$1",
+      "destination": "srv-api",
+      "csrfProtection": true
+    },
+    {
+      "source": "^/portal/model/(.*)$",
+      "target": "/portal/webapp/model/$1",
+      "localDir": "web",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/portal/webapp/view/fragments/(.*)$",
+      "target": "/portal/webapp/view/fragments/$1",
+      "localDir": "web",
+      "authenticationType": "none"
+    },
+    {
+      "source": "^/portal/(.*)",
+      "authenticationType": "none",
+      "localDir": "web"
+    }
+  ]
+}

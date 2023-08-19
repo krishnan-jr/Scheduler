@@ -1,0 +1,440 @@
+{
+    "d": {
+        "results": [{
+            "__metadata": {
+                "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')",
+                "type": "SFOData.EmployeeTime"
+            },
+            "externalCode": "1daa405dfc5b4875b6eda85732c7d7e9",
+            "lastModifiedDateTime": "/Date(1691237456000+0000)/",
+            "endDate": "/Date(1691107200000)/",
+            "entityUUID": "F8C41DD3DDF34414AB6582017137F91F",
+            "loaActualReturnDate": null,
+            "mdfSystemEffectiveEndDate": "/Date(253402214400000)/",
+            "createdDateTime": "/Date(1691237456000+0000)/",
+            "mdfSystemVersionId": null,
+            "timeType": "TT_PTO",
+            "physicalEndDate": "/Date(1691107200000)/",
+            "loaExpectedReturnDate": null,
+            "cust_Country": null,
+            "mdfSystemEntityId": "F8C41DD3DDF34414AB6582017137F91F",
+            "flexibleRequesting": false,
+            "timeRecordOrigin": null,
+            "cust_deliverytype": null,
+            "cust_BirthDate": null,
+            "mdfSystemRecordStatus": "N",
+            "quantityInHours": "8",
+            "loaStartJobInfoId": null,
+            "startDate": "/Date(1691107200000)/",
+            "displayQuantity": "8",
+            "quantityInDays": "1",
+            "mdfSystemEffectiveStartDate": "/Date(-2208988800000)/",
+            "mdfSystemStatus": "A",
+            "cust_Morethan1child": null,
+            "startTime": null,
+            "loaEndJobInfoId": null,
+            "approvalStatus": "APPROVED",
+            "mdfSystemObjectType": "EmployeeTime",
+            "cancellationWorkflowRequestId": null,
+            "deductionQuantity": "8",
+            "cust_notificationdate": null,
+            "lastModifiedDate": "/Date(1691223056000)/",
+            "editable": true,
+            "lastModifiedBy": "AdminHM",
+            "physicalStartDate": "/Date(1691107200000)/",
+            "cust_Sick_Reason": null,
+            "lastModifiedDateWithTZ": "/Date(1691237456000+0000)/",
+            "workflowRequestId": null,
+            "undeterminedEndDate": false,
+            "userId": "802982",
+            "mdfSystemTransactionSequence": "1",
+            "recurrenceGroup": null,
+            "createdDate": "/Date(1691223056000)/",
+            "createdBy": "AdminHM",
+            "workflowInitiatedByAdmin": false,
+            "cust_COVID_Travel": null,
+            "cust_expectedweek": null,
+            "mdfSystemRecordId": "2B15E261F90C432BA01CEA61F212EA15",
+            "comment": null,
+            "fractionQuantity": "8",
+            "endTime": null,
+            "originalQuantityInDays": "1",
+            "userIdNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/userIdNav"
+                }
+            },
+            "createdByNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/createdByNav"
+                }
+            },
+            "countryExtensionDEU": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionDEU"
+                }
+            },
+            "approvalStatusNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/approvalStatusNav"
+                }
+            },
+            "cust_CountryNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/cust_CountryNav"
+                }
+            },
+            "countryExtensionAUS": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionAUS"
+                }
+            },
+            "timeRecordOriginNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/timeRecordOriginNav"
+                }
+            },
+            "countryExtensionNLD": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionNLD"
+                }
+            },
+            "mdfSystemStatusNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/mdfSystemStatusNav"
+                }
+            },
+            "cust_deliverytypeNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/cust_deliverytypeNav"
+                }
+            },
+            "countryExtensionMEX": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionMEX"
+                }
+            },
+            "cust_COVID_TravelNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/cust_COVID_TravelNav"
+                }
+            },
+            "lastModifiedByNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/lastModifiedByNav"
+                }
+            },
+            "countryExtensionPOL": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionPOL"
+                }
+            },
+            "countryExtensionCAN": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionCAN"
+                }
+            },
+            "mdfSystemRecordStatusNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/mdfSystemRecordStatusNav"
+                }
+            },
+            "countryExtensionESP": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionESP"
+                }
+            },
+            "timeCalendar": {
+                "results": [{
+                    "__metadata": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTimeCalendar(EmployeeTime_externalCode='1daa405dfc5b4875b6eda85732c7d7e9',externalCode='a4ba301d1f41488889cebc9b5dedba36')",
+                        "type": "SFOData.EmployeeTimeCalendar"
+                    },
+                    "EmployeeTime_externalCode": "1daa405dfc5b4875b6eda85732c7d7e9",
+                    "externalCode": "a4ba301d1f41488889cebc9b5dedba36",
+                    "date": "/Date(1691107200000)/",
+                    "lastModifiedDateTime": "/Date(1691237456000+0000)/",
+                    "entityUUID": "8166666BA93E4182897DFE3FB43822C3",
+                    "mdfSystemEffectiveEndDate": "/Date(253402214400000)/",
+                    "quantityInDays": "1",
+                    "createdDateTime": "/Date(1691237456000+0000)/",
+                    "mdfSystemVersionId": null,
+                    "physicalEndDate": "/Date(1691107200000)/",
+                    "mdfSystemEffectiveStartDate": "/Date(-2208988800000)/",
+                    "mdfSystemStatus": "A",
+                    "mdfSystemEntityId": "8166666BA93E4182897DFE3FB43822C3",
+                    "startTime": null,
+                    "workScheduleInternalId": "50257",
+                    "mdfSystemObjectType": "EmployeeTimeCalendar",
+                    "deductionQuantity": "8",
+                    "lastModifiedDate": "/Date(1691223056000)/",
+                    "lastModifiedBy": "AdminHM",
+                    "physicalStartDate": "/Date(1691107200000)/",
+                    "lastModifiedDateWithTZ": "/Date(1691237456000+0000)/",
+                    "mdfSystemRecordStatus": "N",
+                    "mdfSystemTransactionSequence": "1",
+                    "createdDate": "/Date(1691223056000)/",
+                    "createdBy": "AdminHM",
+                    "quantityInHours": "8",
+                    "mdfSystemRecordId": "BDC651C7002E4011B7F818BEB64BB0C0",
+                    "endTime": null,
+                    "mdfSystemStatusNav": {
+                        "__deferred": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTimeCalendar(EmployeeTime_externalCode='1daa405dfc5b4875b6eda85732c7d7e9',externalCode='a4ba301d1f41488889cebc9b5dedba36')/mdfSystemStatusNav"
+                        }
+                    },
+                    "createdByNav": {
+                        "__deferred": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTimeCalendar(EmployeeTime_externalCode='1daa405dfc5b4875b6eda85732c7d7e9',externalCode='a4ba301d1f41488889cebc9b5dedba36')/createdByNav"
+                        }
+                    },
+                    "lastModifiedByNav": {
+                        "__deferred": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTimeCalendar(EmployeeTime_externalCode='1daa405dfc5b4875b6eda85732c7d7e9',externalCode='a4ba301d1f41488889cebc9b5dedba36')/lastModifiedByNav"
+                        }
+                    },
+                    "mdfSystemRecordStatusNav": {
+                        "__deferred": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTimeCalendar(EmployeeTime_externalCode='1daa405dfc5b4875b6eda85732c7d7e9',externalCode='a4ba301d1f41488889cebc9b5dedba36')/mdfSystemRecordStatusNav"
+                        }
+                    },
+                    "timeAccountDetail": {
+                        "__deferred": {
+                            "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTimeCalendar(EmployeeTime_externalCode='1daa405dfc5b4875b6eda85732c7d7e9',externalCode='a4ba301d1f41488889cebc9b5dedba36')/timeAccountDetail"
+                        }
+                    }
+                }]
+            },
+            "countryExtensionUSA": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionUSA"
+                }
+            },
+            "timeTypeNav": {
+                "__metadata": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')",
+                    "type": "SFOData.TimeType"
+                },
+                "externalCode": "TT_PTO",
+                "country": null,
+                "lastModifiedDateTime": "/Date(1565036661000+0000)/",
+                "allowedFractionsUnitHour": "FULL_HOURS",
+                "entityUUID": "37CD5FD8215B484495D01FA0CA9F955B",
+                "mdfSystemEffectiveEndDate": "/Date(253402214400000)/",
+                "createdDateTime": "/Date(1444003492000+0000)/",
+                "mdfSystemVersionId": null,
+                "allocationStrategy": null,
+                "workflowConfiguration": null,
+                "enableEmployeeTimeCalendarCreation": null,
+                "mdfSystemEntityId": "37CD5FD8215B484495D01FA0CA9F955B",
+                "undeterminedEndDateAllowed": false,
+                "activateCancellationWorkflow": false,
+                "absenceRetentionGroup": null,
+                "balanceCalculationSetting": "STANDARD",
+                "externalName_localized": "PTO",
+                "mdfSystemRecordStatus": "N",
+                "flexibleRequestingAllowed": false,
+                "unit": "HOURS",
+                "requestingOnNonWorkingDaysAllowed": false,
+                "externalName_en_GB": null,
+                "loaEndEventReason": null,
+                "countingMethod": null,
+                "allowedRequestingIncrement": null,
+                "adminWorkflow": null,
+                "externalName_defaultValue": "Training",
+                "postingPriority": null,
+                "loaStartEventReason": null,
+                "calculationMethod": "WORKSCHEDULE",
+                "postingOrder": null,
+                "maximumDurationInMonths": "24",
+                "mdfSystemEffectiveStartDate": "/Date(-2208988800000)/",
+                "mdfSystemStatus": "A",
+                "accrualRecalculationRelevance": null,
+                "notToCountAsTimeInService": null,
+                "absenceClass": "UNSPECIFIED",
+                "mdfSystemObjectType": "TimeType",
+                "lastModifiedDate": "/Date(1565022261000)/",
+                "allowedFractionsUnitDay": null,
+                "collisionGrouping": null,
+                "lastModifiedBy": "sfadmin",
+                "lastModifiedDateWithTZ": "/Date(1565036661000+0000)/",
+                "mdfSystemTransactionSequence": "1",
+                "createdDate": "/Date(1443989092000)/",
+                "createdBy": "admindlr",
+                "mdfSystemRecordId": "50914BB389C04CC38D4FA220C257B560",
+                "category": "ABSENCE",
+                "externalName_en_US": "PTO",
+                "postingOrderNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/postingOrderNav"
+                    }
+                },
+                "accrualRecalculationRelevanceNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/accrualRecalculationRelevanceNav"
+                    }
+                },
+                "balanceCalculationSettingNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/balanceCalculationSettingNav"
+                    }
+                },
+                "createdByNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/createdByNav"
+                    }
+                },
+                "externalNameTranslationTextNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/externalNameTranslationTextNav"
+                    }
+                },
+                "workflowConfigurationNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/workflowConfigurationNav"
+                    }
+                },
+                "loaEndEventReasonNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/loaEndEventReasonNav"
+                    }
+                },
+                "allowedFractionsUnitDayNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/allowedFractionsUnitDayNav"
+                    }
+                },
+                "countryExtensionDEU": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countryExtensionDEU"
+                    }
+                },
+                "allocationStrategyNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/allocationStrategyNav"
+                    }
+                },
+                "unitNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/unitNav"
+                    }
+                },
+                "calculationMethodNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/calculationMethodNav"
+                    }
+                },
+                "absenceClassNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/absenceClassNav"
+                    }
+                },
+                "countryExtensionAUS": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countryExtensionAUS"
+                    }
+                },
+                "allowedFractionsUnitHourNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/allowedFractionsUnitHourNav"
+                    }
+                },
+                "countryExtensionNLD": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countryExtensionNLD"
+                    }
+                },
+                "timeAccountPostingRules": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/timeAccountPostingRules"
+                    }
+                },
+                "mdfSystemStatusNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/mdfSystemStatusNav"
+                    }
+                },
+                "loaStartEventReasonNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/loaStartEventReasonNav"
+                    }
+                },
+                "lastModifiedByNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/lastModifiedByNav"
+                    }
+                },
+                "countingMethodNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countingMethodNav"
+                    }
+                },
+                "countryExtensionCAN": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countryExtensionCAN"
+                    }
+                },
+                "mdfSystemRecordStatusNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/mdfSystemRecordStatusNav"
+                    }
+                },
+                "countryExtensionUSA": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countryExtensionUSA"
+                    }
+                },
+                "postingPriorityNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/postingPriorityNav"
+                    }
+                },
+                "adminWorkflowNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/adminWorkflowNav"
+                    }
+                },
+                "categoryNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/categoryNav"
+                    }
+                },
+                "countryNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/countryNav"
+                    }
+                },
+                "wfRequestNav": {
+                    "__deferred": {
+                        "uri": "https://apisalesdemo8.successfactors.com/odata/v2/TimeType('TT_PTO')/wfRequestNav"
+                    }
+                }
+            },
+            "recurrenceGroupNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/recurrenceGroupNav"
+                }
+            },
+            "cust_attachmentNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/cust_attachmentNav"
+                }
+            },
+            "countryExtensionCOL": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/countryExtensionCOL"
+                }
+            },
+            "cust_Sick_ReasonNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/cust_Sick_ReasonNav"
+                }
+            },
+            "wfRequestNav": {
+                "__deferred": {
+                    "uri": "https://apisalesdemo8.successfactors.com/odata/v2/EmployeeTime('1daa405dfc5b4875b6eda85732c7d7e9')/wfRequestNav"
+                }
+            }
+        }]
+    }
+}

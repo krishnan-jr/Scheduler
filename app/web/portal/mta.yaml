@@ -1,0 +1,22 @@
+ID: ui5-taskSchedule
+_schema-version: 3.2.0
+version: 1.0.0
+parameters:
+  enable-parallel-deployments: true
+
+modules:
+  - name: ui5
+    type: html5
+    path: ./
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - ui5 build --dest ./approuter/webapp
+      supported-platforms: []
+  - name: taskSchedule-app
+    type: approuter.nodejs
+    path: approuter
+    parameters:
+      disk-quota: 256M
+      memory: 256M

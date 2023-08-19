@@ -1,0 +1,22 @@
+{
+    "name": "calendar",
+    "version": "0.0.1",
+    "private": true,
+    "description": "A Scheduling application.",
+    "keywords": [
+        "ui5",
+        "openui5",
+        "sapui5"
+    ],
+    "main": "webapp/index.html",
+    "dependencies": {},
+    "devDependencies": {
+        "@ui5/cli": "^3.0.0",
+        "@sap/ux-ui5-tooling": "1"
+    },
+    "scripts": {
+        "start": "ui5 serve",
+        "build": "mbt build"
+    },
+    "sapuxLayer": "CUSTOMER_BASE"
+}

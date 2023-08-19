@@ -1,0 +1,132 @@
+/* Hide Today - Highlight */
+
+.sapUiCalItem.sapUiCalItemNow:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: transparent;
+    border-radius: 0.5rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* Hide Today - Highlight in Row */
+
+.sapUiCalendarRowNow {
+    border-left: none;
+    border-right: none;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.sapUiCalendarAppType01.sapUiCalendarApp,
+.sapUiCalendarAppType01.sapUiCalendarApp:active {
+    background-color: #ffef9f !important;
+}
+
+.sapUiCalendarRowVisFilled>.sapUiCalendarRowApps>.sapUiCalendarAppType01.sapUiCalendarApp:not(.sapUiCalendarAppSel)>.sapUiCalendarAppCont {
+    background-color: #ffef9f !important;
+}
+
+.sapUiCalendarAppType01.sapUiCalendarApp,
+.sapUiCalendarAppType01.sapUiCalendarApp:active {
+    border-left-color: #ffef9f;
+}
+
+
+/* 
+.sapMGenericTagSuccess .sapMGenericTagWrap {
+    background: none;
+    background-color: #298123;
+} */
+
+.sapUiCalendarAppType06.sapUiCalendarApp,
+.sapUiCalendarAppType06.sapUiCalendarApp:active {
+    background-color: #d1efff !important;
+}
+
+.sapUiCalendarRowVisFilled>.sapUiCalendarRowApps>.sapUiCalendarAppType06.sapUiCalendarApp:not(.sapUiCalendarAppSel)>.sapUiCalendarAppCont {
+    background-color: #d1efff !important;
+}
+
+.sapUiCalendarAppType06.sapUiCalendarApp,
+.sapUiCalendarAppType06.sapUiCalendarApp:active {
+    border-left-color: #d1efff;
+}
+
+.sapUiCalendarAppType07.sapUiCalendarApp,
+.sapUiCalendarAppType07.sapUiCalendarApp:active {
+    background-color: #c2fcee !important;
+}
+
+.sapUiCalendarRowVisFilled>.sapUiCalendarRowApps>.sapUiCalendarAppType07.sapUiCalendarApp:not(.sapUiCalendarAppSel)>.sapUiCalendarAppCont {
+    background-color: #c2fcee !important;
+}
+
+.sapUiCalendarAppType07.sapUiCalendarApp,
+.sapUiCalendarAppType07.sapUiCalendarApp:active {
+    border-left-color: #c2fcee;
+}
+
+
+/* .sapMGenericTagWarning .sapMGenericTagWrap {
+    background: none;
+    background-color: #e76500;
+} */
+
+.sapMFlexBoxBGTransparent {
+    background-color: white;
+}
+
+.sapUiCalendarApp {
+    border-left: none !important;
+}
+
+.sapMGenericTagWrap .sapMGenericTagText {
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.sapUiTableTreeIcon {
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    width: 0rem;
+    height: 0rem;
+    cursor: default;
+    visibility: hidden;
+}
+
+.sapUiDSC>.sapUiDSCSpan3 {
+    width: 15%;
+}
+
+.sapUiDSC>.sapUiDSCSpan9 {
+    width: 85%;
+}
+
+.sapUiCalItem:focus:not(.sapUiCalItemNow):not(.sapUiCalItemSel) .sapUiCalItemText:after {
+    position: absolute;
+    content: "";
+    top: 0.3125rem;
+    left: 0.3125rem;
+    right: 0.3125rem;
+    bottom: 0.3125rem;
+    border: none;
+    border-radius: 0.1875rem;
+}
+
+.sapMGenericTag {
+    display: inline-grid !important;
+}
+
+.sapMBtnDisabled {
+    opacity: 1;
+}
