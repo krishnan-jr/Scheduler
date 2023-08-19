@@ -112,3 +112,11 @@ entity Jobs {
         mimeType            : String(32);
 }
 
+entity Holidays {
+    key externalCode     : String(128);
+    key date             : DateTime;
+        externalCodeName : String(255);
+        holiday          : String(128);
+        holidayName      : String(255);
+
+}

@@ -220,4 +220,43 @@ module.exports = function () {
             return error.message;
         }
     })
+
+    this.on("syncHolidays", async (req) => {
+        try {
+            const jwt = retrieveJwt(req);
+            const destinationDetails = {
+                destinationName,
+                jwt
+            }
+            const HolidayResponse = await executeHttpRequest(destinationDetails,
+                {
+                    method: "GET",
+                    url: "/odata/v2/HolidayCalendar?$select=externalCode,name_defaultValue,holidayAssignments/holiday,holidayAssignments/holiday,holidayAssignments/date,holidayAssignments/holidayNav/name_defaultValue&$filter=externalCode eq 'USA'&$expand=holidayAssignments,holidayAssignments/holidayNav",
+                    timeout: 60000,
+
+                });
+            const HolidayData = HolidayResponse.data.d.results;
+            if (HolidayData.length > 0) {
+
+                let mappeData = [];
+                HolidayData.forEach((item) => {
+                    var externalCodeName = "", externalCode = item.externalCode, externalCodeName = item.name_defaultValue;
+                    item.holidayAssignments.results.forEach((holiday) => {
+                        mappeData.push({
+                            externalCode,
+                            externalCodeName,
+                            date: moment(holiday.date).format("YYYY-MM-DD HH:mm:ss.SSSSSSSSS"),
+                            holiday: holiday.holiday,
+                            holidayName: holiday.holidayNav.name_defaultValue
+                        })
+                    });
+                })
+                await UPSERT.into("Holidays").entries(mappeData);
+                return "Data Synced"
+            }
+        } catch (error) {
+            console.log(error);
+            return error.message;
+        }
+    })
 }
