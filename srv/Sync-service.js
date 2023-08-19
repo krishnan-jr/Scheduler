@@ -1,7 +1,8 @@
 const cds = require('@sap/cds');
+const moment = require('moment');
 const { executeHttpRequest } = require("@sap-cloud-sdk/http-client");
-const {  retrieveJwt } = require('@sap-cloud-sdk/connectivity');
-const destinationName = "SF_App"
+const { retrieveJwt } = require('@sap-cloud-sdk/connectivity');
+const destinationName = "SF_App";
 module.exports = function () {
     this.on("syncShifts", async (req) => {
         try {
@@ -26,8 +27,8 @@ module.exports = function () {
                 const segmentData = [];
                 const shiftData = shiftsData.map((shift, index) => {
                     let colorIndex = index;
-                    if(colorIndex > 18){
-                        colorIndex = colorIndex - 19; 
+                    if (colorIndex > 18) {
+                        colorIndex = colorIndex - 19;
                     }
                     // Map each segment of the shift to a new array
                     shift.segments.results.forEach(segment => {
@@ -58,6 +59,32 @@ module.exports = function () {
                 await UPSERT.into("Shifts").entries(shiftData);
                 await UPSERT.into("Segments").entries(segmentData);
                 return "Data Synced"
+            }
+        } catch (error) {
+            console.log(error);
+            return error.message;
+        }
+    })
+    
+    this.on("syncJobs", async (req) => {
+        try {
+            const jwt = retrieveJwt(req);
+            const destinationDetails = {
+                destinationName,
+                jwt
+            }
+            let top = 50, skip = 0;
+            const JobsResponse = await executeHttpRequest(destinationDetails,
+                {
+                    method: "GET",
+                    url: `/odata/v2/EmpJob?$format=json&$select=seqNumber,startDate,userId,company,employmentNav/personNav/personalInfoNav/firstName,employmentNav/personNav/personalInfoNav/lastName,companyNav/name_defaultValue,businessUnit,businessUnitNav/name_defaultValue,division,divisionNav/name_defaultValue,department,departmentNav/name_defaultValue,location,locationNav/name,position,positionNav/externalName_defaultValue,costCenter,costCenterNav/name_defaultValue,employeeClass,employeeClassNav/picklistLabels/label,employmentType,employmentTypeNav/picklistLabels/label,employmentNav/startDate,employmentNav/endDate,employmentNav/compInfoNav/payGroup,employmentNav/compInfoNav/payGroupNav/name_defaultValue,managerId,employmentNav/photoNav/width,employmentNav/photoNav/height&$expand=employmentNav,employmentNav/personNav,employmentNav/personNav/personalInfoNav,companyNav,businessUnitNav,divisionNav,departmentNav,locationNav,positionNav,costCenterNav,employeeClassNav,employeeClassNav/picklistLabels,employmentTypeNav,employmentTypeNav/picklistLabels,employmentNav,employmentNav/compInfoNav,employmentNav/compInfoNav/payGroupNav&$top=${top}&$skip=${skip}`,
+                    timeout: 60000,
+
+                });
+            const JobsData = JobsResponse.data.d.results;
+            if (JobsData.length > 0) {
+                console.log("JobsData", JobsData);
+                return JSON.stringify(JobsData);
             }
         } catch (error) {
             console.log(error);
