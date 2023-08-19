@@ -148,9 +148,10 @@ module.exports = function () {
                                 }
                             }
                             if (item.employmentNav.photoNav && item.employmentNav.photoNav.results && item.employmentNav.photoNav.results.length > 0) {
-                                const photos = item.employmentNav.photoNav.results;
+                                let photos = item.employmentNav.photoNav.results;
+                                const filtered = photos.filter(item => item.photo);
                                 //sort photos by highest width and height
-                                const sorted = photos.sort((a, b) => {
+                                const sorted = filtered.sort((a, b) => {
                                     if (a.width > b.width) {
                                         return -1;
                                     } else if (a.width < b.width) {
@@ -165,8 +166,10 @@ module.exports = function () {
                                         }
                                     }
                                 })[0];
-                                photo = sorted.photo.replace(/\r\n/g, "");
-                                mimeType = sorted.mimeType;
+                                if (sorted) {
+                                    photo = sorted.photo.replace(/\r\n/g, "");
+                                    mimeType = sorted.mimeType;
+                                }
                             }
                         }
 
