@@ -79,7 +79,7 @@ module.exports = function () {
                 const JobsResponse = await executeHttpRequest(destinationDetails,
                     {
                         method: "GET",
-                        url: `/odata/v2/EmpJob?$select=seqNumber,startDate,userId,company,employmentNav/personNav/personalInfoNav/firstName,employmentNav/personNav/personalInfoNav/lastName,companyNav/name_defaultValue,businessUnit,businessUnitNav/name_defaultValue,division,divisionNav/name_defaultValue,department,departmentNav/name_defaultValue,location,locationNav/name,position,positionNav/externalName_defaultValue,costCenter,costCenterNav/name_defaultValue,employeeClass,employeeClassNav/picklistLabels/label,employmentType,employmentTypeNav/picklistLabels/label,employmentNav/startDate,employmentNav/endDate,employmentNav/compInfoNav/payGroup,employmentNav/compInfoNav/payGroupNav/name_defaultValue,managerId,employmentNav/photoNav/width,employmentNav/photoNav/height&$expand=employmentNav,employmentNav/personNav,employmentNav/personNav/personalInfoNav,companyNav,businessUnitNav,divisionNav,departmentNav,locationNav,positionNav,costCenterNav,employeeClassNav,employeeClassNav/picklistLabels,employmentTypeNav,employmentTypeNav/picklistLabels,employmentNav,employmentNav/compInfoNav,employmentNav/compInfoNav/payGroupNav&$top=${top}&$skip=${skip}`,
+                        url: `/odata/v2/EmpJob?$select=seqNumber,startDate,userId,company,employmentNav/personNav/personalInfoNav/firstName,employmentNav/personNav/personalInfoNav/lastName,companyNav/name_defaultValue,businessUnit,businessUnitNav/name_defaultValue,division,divisionNav/name_defaultValue,department,departmentNav/name_defaultValue,location,locationNav/name,position,positionNav/externalName_defaultValue,costCenter,costCenterNav/name_defaultValue,employeeClass,employeeClassNav/picklistLabels/label,employmentType,employmentTypeNav/picklistLabels/label,employmentNav/startDate,employmentNav/endDate,employmentNav/compInfoNav/payGroup,employmentNav/compInfoNav/payGroupNav/name_defaultValue,managerId,employmentNav/photoNav/width,employmentNav/photoNav/height,employmentNav/photoNav/mimeType,employmentNav/photoNav/photo&$expand=employmentNav,employmentNav/personNav,employmentNav/photoNav,employmentNav/personNav/personalInfoNav,companyNav,businessUnitNav,divisionNav,departmentNav,locationNav,positionNav,costCenterNav,employeeClassNav,employeeClassNav/picklistLabels,employmentTypeNav,employmentTypeNav/picklistLabels,employmentNav,employmentNav/compInfoNav,employmentNav/compInfoNav/payGroupNav&$top=${top}&$skip=${skip}`,
                         timeout: 60000,
 
                     });
@@ -87,7 +87,7 @@ module.exports = function () {
                 if (JobsData.length > 0) {
                     let mappedJobs = JobsData.map((item) => {
                         var employmentTypeName = "", businessUnitName = "", locationName = "", positionName = "", departmentName = "", divisionName = "", costCenterName = "", companyName = "", employeeClassName = "", employmentStartDate = "",
-                            employmentEndDate = "", firstName = "", lastName = "";
+                            employmentEndDate = "", firstName = "", lastName = "", photo = "", mimeType = "";
                         // This code gets the first picklist label from the employmentTypeNav property of the item.
                         // The employmentTypeNav property contains picklist labels for the employmentType property of the item.
                         if (item.employmentType && item.employmentTypeNav && item.employmentTypeNav.picklistLabels && item.employmentTypeNav.picklistLabels.results && item.employmentTypeNav.picklistLabels.results.length > 0) {
@@ -147,6 +147,27 @@ module.exports = function () {
                                     lastName = item.employmentNav.personNav.personalInfoNav.results[0].lastName;
                                 }
                             }
+                            if (item.employmentNav.photoNav && item.employmentNav.photoNav.results && item.employmentNav.photoNav.results.length > 0) {
+                                const photos = item.employmentNav.photoNav.results;
+                                //sort photos by highest width and height
+                                const sorted = photos.sort((a, b) => {
+                                    if (a.width > b.width) {
+                                        return -1;
+                                    } else if (a.width < b.width) {
+                                        return 1;
+                                    } else {
+                                        if (a.height > b.height) {
+                                            return -1;
+                                        } else if (a.height < b.height) {
+                                            return 1;
+                                        } else {
+                                            return 0;
+                                        }
+                                    }
+                                })[0];
+                                photo = sorted.photo;
+                                mimeType = sorted.mimeType;
+                            }
                         }
 
                         return {
@@ -175,7 +196,9 @@ module.exports = function () {
                             employmentStartDate,
                             employmentEndDate,
                             firstName,
-                            lastName
+                            lastName,
+                            photo,
+                            mimeType
                         }
                     });
                     await UPSERT.into("Jobs").entries(mappedJobs);
