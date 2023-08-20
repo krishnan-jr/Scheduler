@@ -288,7 +288,7 @@ module.exports = function () {
                             startDate: moment(item.startDate).format("YYYY-MM-DD"),
                             endDate: moment(item.endDate).format("YYYY-MM-DD"),
                             timeType: item.timeType,
-                            timeTypeNav: item.timeTypeNav.externalName_defaultValue,
+                            category: item.timeTypeNav.externalName_defaultValue,
                             leave:true,
                             colorType: 'Type07'
                         }
