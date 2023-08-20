@@ -45,12 +45,7 @@ sap.ui.define([
                 this.empDetailModel = new JSONModel();
                 this.getView().setModel(this.empDetailModel, "empDetailModel");
                 sap.ui.core.BusyIndicator.show();
-                this._getShiftData();
                 this._getEmployeeData();
-            },
-            _getShiftData: function () {
-                var _self = this;
-
             },
             _getEmployeeData: function () {
                 var _self = this;
@@ -104,6 +99,7 @@ sap.ui.define([
             },
             /** Appointment Delails PopOver*/
             handleAppointmentSelect: function (oEvent) {
+                sap.ui.core.BusyIndicator.show();
                 var oAppointment = oEvent.getParameter("appointment"),
                     iSelectedAppointments = this.byId("PC1").getSelectedAppointments().length,
                     oView = this.getView();
@@ -135,6 +131,7 @@ sap.ui.define([
                     const obj = oAppointment.getBindingContext("employeeModel").getObject();
                     this.apptDetailModel.setData({ ...obj });
                     oApptDetailsPopover.openBy(oAppointment);
+                    sap.ui.core.BusyIndicator.hide();
                 }.bind(this));
             },
             /** Schedule an appointment !important*/
@@ -256,6 +253,7 @@ sap.ui.define([
             },
             /** Employee Deatils PopOver*/
             handleHeaderPress: function (oEvent) {
+                sap.ui.core.BusyIndicator.show();
                 const oView = this.getView(),
                     oModel = this.getView().getModel("empDetailModel");;
                 this.getCardData(oEvent);
@@ -268,6 +266,7 @@ sap.ui.define([
                     oDialog.setModel(oModel);
                     this.oDialog = oDialog;
                     this.oDialog.open();
+                    sap.ui.core.BusyIndicator.hide();
                 }.bind(this));
             },
             onCloseEmployeeDialog: function () {
