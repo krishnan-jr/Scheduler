@@ -130,3 +130,21 @@
 .sapMBtnDisabled {
     opacity: 1;
 }
+
+.sapMLIB.sapMLIBSelected {
+    border: 0.0625rem solid #0070f2;
+}
+
+.sapMLIBFocusable:focus {
+    outline: none;
+    outline-offset: calc(-0.125rem - 0.0625rem);
+}
+
+.sapUiCalendarApp.sapUiCalendarAppHeight1.sapUiCalendarAppTitleOnly {
+    line-height: 0.5rem;
+    top: 20px !important;
+}
+.align-shift{
+    margin-right: 0rem !important;
+    margin-top: 0.11rem !important;
+}

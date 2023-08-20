@@ -1,13 +1,13 @@
 sap.ui.define([
-        "sap/ui/core/library",
-        "sap/ui/core/Fragment",
-        "sap/ui/core/mvc/Controller",
-        "sap/ui/core/format/DateFormat",
-        "sap/ui/model/json/JSONModel",
-        "sap/m/MessageToast",
-        "sap/m/MessageBox"
-    ],
-    function(library,
+    "sap/ui/core/library",
+    "sap/ui/core/Fragment",
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/format/DateFormat",
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageToast",
+    "sap/m/MessageBox"
+],
+    function (library,
         Fragment,
         Controller,
         DateFormat,
@@ -20,90 +20,90 @@ sap.ui.define([
             /**
              * @override
              */
-            onBeforeRendering: function() {
+            onBeforeRendering: function () {
                 this.byId("container-calendar---Calendar--PC1-Header-NavToolbar-PickerBtn").setVisible(false);
                 const newStartDate = this.byId("PC1").getStartDate(),
                     year = newStartDate.getFullYear(),
                     monthName = newStartDate.toLocaleString('default', { month: 'long' });
                 this.byId("PC1")._oTodayButton.setText(monthName + ' ' + year);
             },
-            onInit: function() {
+            /**
+             * @override
+             */
+            onAfterRendering: function () {
+            },
+            onInit: function () {
                 this.shiftModel = new JSONModel();
                 this.getView().setModel(this.shiftModel, "shiftModel");
 
                 this.employeeModel = new JSONModel();
-                // await this.employeeModel.loadData("../model/employee.json");
-                // this.employeeModel.setData(this.employeeModel.getData().d.results);
                 this.getView().setModel(this.employeeModel, "employeeModel");
-
-                this.employeeLeaveModel = new JSONModel();
-                // await this.employeeLeaveModel.loadData("../model/employeeLeave.json");
-                // this.employeeLeaveModel.setData(this.employeeLeaveModel.getData().d.results);
-                this.getView().setModel(this.employeeLeaveModel, "employeeLeaveModel");
-
-                // this._convertEmpDataToNewFormat(this.employeeModel.getData(), this.employeeLeaveModel.getData());
 
                 this.apptDetailModel = new JSONModel();
                 this.getView().setModel(this.apptDetailModel, "apptDetailModel");
 
                 this.empDetailModel = new JSONModel();
                 this.getView().setModel(this.empDetailModel, "empDetailModel");
-
+                sap.ui.core.BusyIndicator.show();
                 this._getShiftData();
                 this._getEmployeeData();
             },
-            /**Add special Dates to existing array*/
-            // _convertEmpDataToNewFormat: function (empDate, empLeaveData) {
-            //     const extractedData = empLeaveData.map(result => {
-            //         const startDate = new Date(parseInt(result.startDate.slice(6, -2))),
-            //             endDate = new Date(parseInt(result.endDate.slice(6, -2)));
-            //         return {
-            //             externalName: result.timeTypeNav.externalName_localized,
-            //             approvalStatus: result.approvalStatus,
-            //             startDate: new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()),
-            //             endDate: new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()),
-            //             type: "Type07",
-            //             leave: true,
-            //             title: "Leave"
-            //         };
-            //     });
-            //     empDate.forEach(obj => {
-            //         if (obj.userId === "802982") {
-            //             obj["appointments"] = extractedData;
-            //         }
-            //     });
-            //     this.employeeModel.setData(empDate);
-            // },
-            /** Data formulation for shift */
-            _getShiftData: function() {
+            _getShiftData: function () {
                 var _self = this;
-                jQuery.ajax({
-                    url: "/srv/schedule/Shift",
-                    type: "GET",
-                    success: function(data, status, xhr) {
-                        _self.shiftModel.setData(data.value);
-                    },
-                    error: function(response) {
-                        debugger;
-                    }
-                });
+
             },
-            _getEmployeeData: function() {
+            _getEmployeeData: function () {
                 var _self = this;
                 jQuery.ajax({
-                    url: "/srv/schedule/Shift",
+                    url: "/srv/schedule/Employees?$filter=managerId eq '802981'&$expand=appointments",
                     type: "GET",
-                    success: function(data, status, xhr) {
-                        debugger;
-                        _self.shiftModel.setData(data.value);
+                    success: function (data, status, xhr) {
+                        if (data.value.length > 0) {
+
+                            // Function to set time to start of day (00:00:00)
+                            function setStartOfDay(date) {
+                                const startOfDay = new Date(date);
+                                startOfDay.setHours(0, 0, 0, 0);
+                                return startOfDay;
+                            }
+
+                            // Function to set time to end of day (23:59:59)
+                            function setEndOfDay(date) {
+                                const endOfDay = new Date(date);
+                                endOfDay.setHours(23, 59, 59, 999);
+                                return endOfDay;
+                            }
+
+                            // Loop through the main array
+                            for (const item of data.value) {
+                                // Loop through the appointments array within each element
+                                for (const appointment of item.appointments) {
+                                    // Convert date strings to Date format
+                                    appointment.startDate = setStartOfDay(appointment.startDate);
+                                    appointment.endDate = setEndOfDay(appointment.endDate);
+                                }
+                            }
+                        }
+                        jQuery.ajax({
+                            url: "/srv/schedule/Shift",
+                            type: "GET",
+                            success: function (data, status, xhr) {
+                                _self.shiftModel.setData(data.value);
+                                sap.ui.core.BusyIndicator.hide()
+                            },
+                            error: function (response) {
+                                sap.ui.core.BusyIndicator.hide()
+                            }
+                        });
+                        _self.employeeModel.setData(data.value);
                     },
-                    error: function(response) {
-                        debugger;
+                    error: function (response) {
+                        sap.ui.core.BusyIndicator.hide()
                     }
                 });
             },
             /** Appointment Delails PopOver*/
-            handleAppointmentSelect: function(oEvent) {
+            handleAppointmentSelect: function (oEvent) {
                 var oAppointment = oEvent.getParameter("appointment"),
                     iSelectedAppointments = this.byId("PC1").getSelectedAppointments().length,
                     oView = this.getView();
@@ -112,7 +112,7 @@ sap.ui.define([
                     return;
                 }
                 if (!oAppointment.getSelected() && this._pApptDetailsPopover) {
-                    this._pApptDetailsPopover.then(function(oApptDetailsPopover) {
+                    this._pApptDetailsPopover.then(function (oApptDetailsPopover) {
                         oApptDetailsPopover.close();
                     });
                     return;
@@ -124,21 +124,21 @@ sap.ui.define([
                         id: oView.getId(),
                         name: "calendar.view.fragments.Appointment",
                         controller: this
-                    }).then(function(oApptDetailsPopover) {
+                    }).then(function (oApptDetailsPopover) {
                         oView.addDependent(oApptDetailsPopover);
                         return oApptDetailsPopover;
                     });
                 }
 
-                this._pApptDetailsPopover.then(function(oApptDetailsPopover) {
+                this._pApptDetailsPopover.then(function (oApptDetailsPopover) {
                     oApptDetailsPopover.setBindingContext(oAppointment.getBindingContext("employeeModel"));
                     const obj = oAppointment.getBindingContext("employeeModel").getObject();
-                    this.apptDetailModel.setData({...obj });
+                    this.apptDetailModel.setData({ ...obj });
                     oApptDetailsPopover.openBy(oAppointment);
                 }.bind(this));
             },
             /** Schedule an appointment !important*/
-            handleIntervalSelect: function(oEvent) {
+            handleIntervalSelect: function (oEvent) {
                 var oPC = oEvent.getSource(),
                     oStartDate = oEvent.getParameter("startDate"),
                     oRow = oEvent.getParameter("row"),
@@ -170,19 +170,19 @@ sap.ui.define([
                     }
                 }
             },
-            _createAppointment: function(oPC, oRow, oStartDate, oSelectedItem) {
+            _createAppointment: function (oPC, oRow, oStartDate, oSelectedItem) {
                 const oMultipleRows = oPC.getSelectedRows(),
                     oModel = this.getView().getModel("employeeModel"),
                     oData = oModel.getData(),
                     oSelectedNode = oSelectedItem.getBindingContext("shiftModel").getObject(),
-                    type = oSelectedNode.colorType,
+                    colorType = oSelectedNode.colorType,
                     startDate = new Date(new Date(oStartDate).setHours(0, 0, 0, 0)),
                     endDate = new Date(new Date(oStartDate).setHours(23, 59, 59, 999)),
                     oAppointment = {
                         startDate: startDate,
                         endDate: endDate,
                         title: oSelectedNode.externalName_defaultValue,
-                        type: type,
+                        colorType: colorType,
                         leave: false,
                         externalCode: oSelectedNode.externalCode,
                         workingHours: oSelectedNode.workingHours,
@@ -212,7 +212,7 @@ sap.ui.define([
                 oModel.setData(oData);
             },
             /** Check if appointment already exists*/
-            _ifAppointmentExists: function(startDate, appointments) {
+            _ifAppointmentExists: function (startDate, appointments) {
                 return appointments.some(x => {
                     const date1 = new Date(x.startDate.getFullYear(), x.startDate.getMonth(), x.startDate.getDate()),
                         date2 = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
@@ -220,7 +220,7 @@ sap.ui.define([
                 });
             },
             /** Validate Special Date */
-            _checkIfSpecialDate: function(oEvent) {
+            _checkIfSpecialDate: function (oEvent) {
                 const row = oEvent.getParameter("row");
                 if (row) {
                     const oBindingContext = row.getBindingContext("employeeModel"),
@@ -241,7 +241,7 @@ sap.ui.define([
                 }
             },
             /** Format Date*/
-            formatDate: function(oDate) {
+            formatDate: function (oDate) {
                 if (oDate) {
                     var iHours = oDate.getHours(),
                         iMinutes = oDate.getMinutes(),
@@ -255,7 +255,7 @@ sap.ui.define([
                 }
             },
             /** Employee Deatils PopOver*/
-            handleHeaderPress: function(oEvent) {
+            handleHeaderPress: function (oEvent) {
                 const oView = this.getView(),
                     oModel = this.getView().getModel("empDetailModel");;
                 this.getCardData(oEvent);
@@ -264,20 +264,20 @@ sap.ui.define([
                 this.oMPDialog = this.loadFragment({
                     name: "calendar.view.fragments.Employee",
                 });
-                this.oMPDialog.then(function(oDialog) {
+                this.oMPDialog.then(function (oDialog) {
                     oDialog.setModel(oModel);
                     this.oDialog = oDialog;
                     this.oDialog.open();
                 }.bind(this));
             },
-            onCloseEmployeeDialog: function() {
+            onCloseEmployeeDialog: function () {
                 this.oDialog.destroy()
             },
             /** Employee Deatils PopOver*/
             getCardData: function name(oEvent) {
                 const oRow = oEvent.getParameters().row,
                     oBindingContext = oRow.getBindingContext("employeeModel"),
-                    oObject = {...oBindingContext.getObject() },
+                    oObject = { ...oBindingContext.getObject() },
                     oProperties = oRow.mProperties;
                 const cardData = {
                     "pages": [{
@@ -288,43 +288,43 @@ sap.ui.define([
                         "title": oProperties.title,
                         "description": oProperties.text,
                         "groups": [{
-                                "heading": "Details",
-                                "elements": [{
-                                        "label": "Department",
-                                        "value": oObject.departmentNav ? oObject.departmentNav.name_defaultValue : ""
-                                    },
-                                    {
-                                        "label": "Position",
-                                        "value": oObject.positionNav ? oObject.positionNav.externalName_defaultValue : ""
-                                    },
-                                    {
-                                        "label": "Employee Class",
-                                        "value": oObject.employeeClassNav ? oObject.employeeClassNav.picklistLabels.results[0].label : ""
-                                    },
-                                    {
-                                        "label": "Employee Type",
-                                        "value": oObject.employmentTypeNav ? oObject.employmentTypeNav.picklistLabels.results[0].label : ""
-                                    },
-                                    {
-                                        "label": "Division",
-                                        "value": oObject.divisionNav ? oObject.divisionNav.name_defaultValue : ""
-                                    }
-                                ]
+                            "heading": "Details",
+                            "elements": [{
+                                "label": "Department",
+                                "value": oObject.departmentName ?? ""
                             },
                             {
-                                "heading": "Company",
-                                "elements": [{
-                                    "label": "Name",
-                                    "value": oObject.companyNav.name_defaultValue
-                                }]
+                                "label": "Position",
+                                "value": oObject.positionName ?? ""
+                            },
+                            {
+                                "label": "Employee Class",
+                                "value": oObject.employeeClassName ?? ""
+                            },
+                            {
+                                "label": "Employee Type",
+                                "value": oObject.employmentTypeName ?? ""
+                            },
+                            {
+                                "label": "Division",
+                                "value": oObject.divisionName ?? ""
                             }
+                            ]
+                        },
+                        {
+                            "heading": "Company",
+                            "elements": [{
+                                "label": "Name",
+                                "value": oObject.companyName ?? ""
+                            }]
+                        }
                         ]
                     }]
                 }
                 this.empDetailModel.setData(cardData);
             },
             /**Change Month name on change */
-            onIntervalSelect: function(oEvent) {
+            onIntervalSelect: function (oEvent) {
                 const selState = oEvent.getSource().getState();
                 if (selState) {
                     this.byId("interval").setVisible(true);
@@ -335,14 +335,14 @@ sap.ui.define([
                 }
             },
             /**Change Start Date --> Month ane */
-            onChangeStartDate: function(oEvent) {
+            onChangeStartDate: function (oEvent) {
                 const newStartDate = oEvent.getSource().getStartDate(),
                     year = newStartDate.getFullYear(),
                     monthName = newStartDate.toLocaleString('default', { month: 'long' });
                 this.byId("PC1")._oTodayButton.setText(monthName + ' ' + year);
             },
             /**Delete Appointment */
-            onDeleteAppointment: function(oEvent) {
+            onDeleteAppointment: function (oEvent) {
                 var oDetailsPopover = this.byId("apptDetailsPopover"),
                     oBindingContext = oDetailsPopover.getBindingContext(),
                     oAppointment = oBindingContext.getObject(),
@@ -351,7 +351,7 @@ sap.ui.define([
                 this._removeAppointment(oAppointment, iPersonId);
                 oDetailsPopover.close();
             },
-            _removeAppointment: function(oAppointment, sPersonId) {
+            _removeAppointment: function (oAppointment, sPersonId) {
                 var oModel = this.getView().getModel("employeeModel"),
                     sTempPath,
                     aPersonAppointments, iIndexForRemoval;
@@ -368,7 +368,7 @@ sap.ui.define([
                 oModel.setProperty(sTempPath, aPersonAppointments);
             },
             /**Clear Shift Selection  */
-            onClearSelection: function() {
+            onClearSelection: function () {
                 this.byId("Tree").removeSelections();
             }
         });
