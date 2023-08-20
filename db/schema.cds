@@ -81,7 +81,7 @@ entity Segments {
         category             : String(255) default '';
 }
 
-entity Jobs {
+entity Employees {
     key userId              : String(100);
     key seqNumber           : Integer;
     key startDate           : DateTime;
@@ -110,6 +110,9 @@ entity Jobs {
         lastName            : String(128);
         photo               : LargeString;
         mimeType            : String(32);
+        appointments        : Association to many Appointments
+                                  on appointments.userId = $self.userId;
+
 }
 
 entity Holidays {
@@ -119,4 +122,18 @@ entity Holidays {
         holiday          : String(128);
         holidayName      : String(255);
 
+}
+
+entity Appointments {
+    key externalCode : String(128);
+        title        : String(255);
+        startDate    : DateTime;
+        endDate      : DateTime;
+        userId       : type of Employees : userId;
+        timeType     : String(128);
+        category     : String(255);
+        colorType    : type of ColorCode : colorType;
+        leave        : Boolean;
+        employee     : Association to one Employees
+                           on employee.userId = userId;
 }

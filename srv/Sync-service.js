@@ -66,7 +66,7 @@ module.exports = function () {
         }
     })
 
-    this.on("syncJobs", async (req) => {
+    this.on("syncEmployees", async (req) => {
         try {
             const jwt = retrieveJwt(req);
             const destinationDetails = {
@@ -205,7 +205,7 @@ module.exports = function () {
                         }
                     });
                     try {
-                        await UPSERT.into("Jobs").entries(mappedJobs);
+                        await UPSERT.into("Employees").entries(mappedJobs);
                     } catch (error) {
                         console.log("top", top, "skip", skip);
                         console.log(error);
@@ -258,5 +258,55 @@ module.exports = function () {
             console.log(error);
             return error.message;
         }
-    })
+    });
+
+    this.on("syncLeaves", async (req) => {
+        try {
+            const jwt = retrieveJwt(req);
+            const destinationDetails = {
+                destinationName,
+                jwt
+            }
+            let top = 100, skip = 0;
+            let EmpLeaveData = [];
+            do {
+                const EmpLeaveResponse = await executeHttpRequest(destinationDetails,
+                    {
+                        method: "GET",
+                        url: `/odata/v2/EmployeeTime?$select=externalCode,timeType,startDate,endDate,userId,timeTypeNav/category,timeTypeNav/externalName_defaultValue&$filter=timeTypeNav/category eq 'ABSENCE' and startDate gt datetime'2023-01-01T00:00:00'&$expand=timeTypeNav,timeCalendar&$top=${top}&$skip=${skip}`,
+                        timeout: 60000,
+
+                    });
+                EmpLeaveData = EmpLeaveResponse.data.d.results;
+                if (EmpLeaveData.length > 0) {
+                    let mappeData = EmpLeaveData.map((item) => {
+                        return{
+                            externalCode: item.externalCode,
+                            title: item.timeTypeNav.externalName_defaultValue,
+                            userId: item.userId,
+                            // startDate: moment(item.startDate).format("YYYY-MM-DD HH:mm:ss.SSSSSSSSS"),
+                            startDate: moment(item.startDate).format("YYYY-MM-DD"),
+                            endDate: moment(item.endDate).format("YYYY-MM-DD"),
+                            timeType: item.timeType,
+                            timeTypeNav: item.timeTypeNav.externalName_defaultValue,
+                            leave:true,
+                            colorType: 'Type07'
+                        }
+                    })
+                    try {
+                        await UPSERT.into("Appointments").entries(mappeData);
+                    } catch (error) {
+                        console.log("top", top, "skip", skip);
+                        console.log(error);
+                    }
+
+                    skip = skip + top;
+                }
+            } while (EmpLeaveData.length != 0);
+            return "Data Synced"
+        } catch (error) {
+            console.log(error);
+            return error.message;
+        }
+    });
 }
