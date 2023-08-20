@@ -151,17 +151,17 @@ module.exports = function () {
                                 let photos = item.employmentNav.photoNav.results;
                                 const filtered = photos.filter(item => item.photo);
                                 //sort photos by highest width and height
-                                const sorted = filtered.sort((a, b) => {
-                                    if (a.width > b.width) {
-                                        return -1;
-                                    } else if (a.width < b.width) {
+                                const sorted = filtered.sort((a,b) => {
+                                    if(a.width > b.width){
                                         return 1;
-                                    } else {
-                                        if (a.height > b.height) {
-                                            return -1;
-                                        } else if (a.height < b.height) {
+                                    }else if(a.width < b.width){
+                                        return -1;
+                                    }else{
+                                        if(a.height > b.height){
                                             return 1;
-                                        } else {
+                                        }else if(a.height < b.height){
+                                            return -1;
+                                        }else{
                                             return 0;
                                         }
                                     }
