@@ -280,16 +280,16 @@ module.exports = function () {
                 EmpLeaveData = EmpLeaveResponse.data.d.results;
                 if (EmpLeaveData.length > 0) {
                     let mappeData = EmpLeaveData.map((item) => {
-                        return{
+
+                        return {
                             externalCode: item.externalCode,
-                            title: item.timeTypeNav.externalName_defaultValue,
-                            userId: item.userId,
-                            // startDate: moment(item.startDate).format("YYYY-MM-DD HH:mm:ss.SSSSSSSSS"),
-                            startDate: moment(item.startDate).format("YYYY-MM-DD"),
-                            endDate: moment(item.endDate).format("YYYY-MM-DD"),
-                            timeType: item.timeType,
-                            category: item.timeTypeNav.externalName_defaultValue,
-                            leave:true,
+                            title: item.timeTypeNav.externalName_defaultValue ?? "",
+                            userId: item.userId ?? "",
+                            startDate: moment(item.startDate).format("YYYY-MM-DD HH:mm:ss.SSSSSSSSS") ?? "",
+                            endDate: moment(item.endDate).format("YYYY-MM-DD HH:mm:ss.SSSSSSSSS") ?? "",
+                            timeType: item.timeType ?? "",
+                            category: item.timeTypeNav.externalName_defaultValue ?? "",
+                            leave: true,
                             colorType: 'Type07'
                         }
                     })
