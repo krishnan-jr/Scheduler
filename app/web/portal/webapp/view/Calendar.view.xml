@@ -5,7 +5,7 @@
     xmlns="sap.m"
     xmlns:tnt="sap.tnt"
     xmlns:core="sap.ui.core">
-    <Page showHeader="false">
+    <Page id="id-calender" showHeader="true" title="Shift Scheduler" titleAlignment="Center" visible="false">
         <l:BlockLayout id="BlockLayout" background="Dashboard" keepFontSize="true">
             <l:BlockLayoutRow accentCells="Accent1">
                 <l:BlockLayoutCell id="Accent1" width="6">

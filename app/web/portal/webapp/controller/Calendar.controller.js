@@ -84,6 +84,7 @@ sap.ui.define([
                             type: "GET",
                             success: function (data, status, xhr) {
                                 _self.shiftModel.setData(data.value);
+                                _self.byId("id-calender").setVisible(true);
                                 sap.ui.core.BusyIndicator.hide()
                             },
                             error: function (response) {
